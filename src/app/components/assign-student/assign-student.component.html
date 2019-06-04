@@ -1,0 +1,29 @@
+<h2 style="text-align:center">Asignar estudiante:</h2>
+
+<div style="text-align:center">
+  <mat-radio-group aria-label="Elegir opción" [(ngModel)]="option" name="sc">
+    <mat-radio-button value="cet">Centro Educativo Técnico</mat-radio-button>&nbsp;
+    <mat-radio-button value="ets">Escuela Técnica Superior</mat-radio-button>
+  </mat-radio-group>
+</div>
+
+<div style="text-align:center" *ngIf="option === 'cet'">
+  <h2>Asignar a CET:</h2>
+  <mat-form-field appearance="outline" class="example-full-width">
+    <mat-label>Carrera</mat-label>
+    <mat-select>
+      <mat-option *ngFor="let carreer of carreers" [value]="carreer.nombre">
+        {{carreer.nombre}}
+      </mat-option>
+    </mat-select>
+    <mat-icon matSuffix>class</mat-icon>
+  </mat-form-field>
+</div>
+
+<div style="text-align:center">
+<h2>Jornada:</h2>
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="1">Matutina</mat-radio-button>&nbsp;
+    <mat-radio-button value="2">Vespertina</mat-radio-button>
+  </mat-radio-group>
+</div>
